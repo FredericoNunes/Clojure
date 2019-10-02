@@ -5,7 +5,9 @@
 
 (defroutes app-routes
   (GET "/" [] "Hello World")
-  (route/not-found "Not Found"))
+  (GET "/novaRota" [] "Minha Rota")
+  (route/not-found "Not Found")
+  )
 
 (def app
   (wrap-defaults app-routes site-defaults))
