@@ -1,0 +1,10 @@
+(defn multiplo-de-3? [dividendo] (= 0 (mod dividendo 3)))
+(defn par? [numero] (if (even? numero) "Sim" "Não"))
+(defn multiplo-de-3? [dividendo] (= 0 (mod dividendo 3)))
+(defn multiplo-de-5? [dividendo] (= 0 (mod dividendo 5)))
+(defn multiplo-de-15? [dividendo] (= 0 (mod dividendo 15)))
+(defn fizzbuzz [numero] (cond (multiplo-de-3? numero) "fizz" (multiplo-de-5? numero) "buzz" (multiplo-de-15? numero) "fizzbuzz" :else numero))
+
+
+
+
