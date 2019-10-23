@@ -34,7 +34,8 @@
 
 (defn -main
   [& args]
-  (let [{:keys [de para]} (:options (parse-opts args opcoes-do-programa))]
+  (let [{:keys [de para]} (:options 
+                          (parse-opts args opcoes-do-programa))]
         (-> (obter-cotacao de para)
             (formatar de para)
             (prn))))

@@ -5,10 +5,22 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [compojure "1.6.1"]
                  [ring/ring-defaults "0.3.2"]]
-  :plugins [[lein-ring "0.12.5"]]
-  :ring {:handler financeiro.handler/app}
+  :plugins [[lein-ring "0.12.5"]
+            [lein-cloverage "1.1.2"]] ;; Avalia quanto do código está testado
+  :ring {:handler financeiro.handler/app} ;; nesse projeto nao tem main por isso precisa dizer ao ring pra quem delegar as requicoes HTTP
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring/ring-mock "0.3.2"]
-                        [midje "1.9.6"]]
+                        [midje "1.9.6"] ;;testes por facts
+                        [ring/ring-core "1.7.1"] ;; uma dependencia do ring-jetty-adapter
+                        [ring/ring-jetty-adapter "1.7.1"] ;; biblioteca para iniciar e parar o servidor
+                        [clj-http "3.9.1"]] ;; habilita fazer requisições http
+
          :plugins [[lein-midje "3.2.1"]]}})
+
+
+;;lein ring server
+
+;;lein midje :autotest
+
+;;lein cloveraje --runner :midje
