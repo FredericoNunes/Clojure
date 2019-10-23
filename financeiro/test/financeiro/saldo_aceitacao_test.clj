@@ -22,6 +22,6 @@
 ;; fato para verificar a manipulação do servidor
 (fact "saldo inicial é 0"
     (iniciar-servidor 3001)
-        (:body (http/get "https://localhost:3001/saldo")) => 0
+        (:body (http/get "http://localhost:3001/saldo")) => "0"
     (parar-servidor)
     )

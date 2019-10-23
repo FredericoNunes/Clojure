@@ -7,7 +7,7 @@
                  [ring/ring-defaults "0.3.2"]]
   :plugins [[lein-ring "0.12.5"]
             [lein-cloverage "1.1.2"]] ;; Avalia quanto do código está testado
-  :ring {:handler financeiro.handler/app} ;; nesse projeto nao tem main por isso precisa dizer ao ring pra quem delegar as requicoes HTTP
+  :ring {:handler financeiro.handler/app} ;; nessle projeto nao tem main por isso precisa dizer ao ring pra quem delegar as requicoes HTTP
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring/ring-mock "0.3.2"]
