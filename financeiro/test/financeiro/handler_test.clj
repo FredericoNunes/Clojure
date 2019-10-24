@@ -7,7 +7,7 @@
        (fact "o status da resposta é 200"
              (let [response (app (mock/request :get "/"))]
                (:status response) => 200));; =>  quando a função da esquerda for aplicada o resultado esperado é o valor a direita
-       
+
        (fact "o test do corpo é 'Olá Mundo'"
              (let [response (app (mock/request :get "/"))]
                (:body response) => "Hello World"))
@@ -28,7 +28,7 @@
     (fact "o status da resposta é 200"
       (:status response) => 200)
     (fact "o texto do corpo é '0'"
-      (:body response) => "0")  
+      (:body response) => "0")
       )
 )
 
