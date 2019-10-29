@@ -5,6 +5,10 @@
 (defn multiplo-de-15? [dividendo] (= 0 (mod dividendo 15)))
 (defn fizzbuzz [numero] (cond (multiplo-de-3? numero) "fizz" (multiplo-de-5? numero) "buzz" (multiplo-de-15? numero) "fizzbuzz" :else numero))
 
+mkdir -p test/{unitarios,aceitacao}/financeiro
+mv test/financeiro/handler_test.clj test/unitarios/financeiro/
+mv test/financeiro/saldo_aceitacao_test.clj test/aceitacao/financeiro/
+rm -rf test/financeiro/
 
 
 

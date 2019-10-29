@@ -23,7 +23,7 @@
 
 ;; da pra simplificar o mock, resolvi deixar assim pra entender melhor
 
-(facts "Saldo Inicial é 0"
+(facts "Saldo Inicial é 0" :aceitacao ;;rotulo para o midje enchergar
   (let [response (app (mock/request :get "/saldo"))]
     (fact "o status da resposta é 200"
       (:status response) => 200)
