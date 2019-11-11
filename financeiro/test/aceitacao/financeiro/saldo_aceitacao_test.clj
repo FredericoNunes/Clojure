@@ -27,24 +27,11 @@
 
     (fact "o saldo é 1000 quando criamos duas receitas de 2000
             e uma despesa de 3000" :aceitacao
-        (http/post (endereco-para "/transacoes")
-                {:content-type "application/json; charset=utf-8"
-                 :body (json/generate-string {:valor 2000
-                                              :tipo "receita"})})
-            
-        (http/post (endereco-para "/transacoes")
-                {:content-type "application/json; charset=utf-8"
-                 :body (json/generate-string {:valor 2000
-                                              :tipo "receita"})})
-
-        (http/post (endereco-para "/transacoes")
-                {:content-type "application/json; charset=utf-8"
-                 :body (json/generate-string {:valor 3000
-                                              :tipo "despesa"})})
+        (http/post (endereco-para "/transacoes") (receita 2000))
+        (http/post (endereco-para "/transacoes") (receita 2000))
+        (http/post (endereco-para "/transacoes") (despesa 3000))
                             
-        (json/parse-string (conteudo "/saldo") true ) => {:saldo 1000}
-
-    )
+        (json/parse-string (conteudo "/saldo") true ) => {:saldo 1000})
 
 )
 
