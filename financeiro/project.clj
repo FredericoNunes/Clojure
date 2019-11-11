@@ -4,7 +4,9 @@
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [compojure "1.6.1"]
+                 [cheshire "5.8.1"] ;;lidar com json
                  [ring/ring-defaults "0.3.2"]
+                 [ring/ring-json "0.4.0"]
                  [clj-http "3.9.1"]] ;; habilita fazer requisições http
   :plugins [[lein-ring "0.12.5"]] ;; Avalia quanto do código está testado
   :ring {:handler financeiro.handler/app} ;; nessle projeto nao tem main por isso precisa dizer ao ring pra quem delegar as requicoes HTTP
